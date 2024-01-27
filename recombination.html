@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Рекомбінатор</title>
+    <style>
+        body{
+        margin: 0px;
+        background: url(https://minfin.com.ua/telecom/sites/default/files/images/svoy-nomer-telefona.jpg);
+        background-repeat: no-repeat;
+        background-size: 850px
+        }
+        .header{
+        height:60px;
+        background: linear-gradient(rgb(24, 158, 17), black);
+        }
+        h3{
+        color: rgb(66, 217, 255);
+        margin-left: 350px
+        }
+        .header p{
+        color: rgb(66, 217, 255);
+        margin-left: 130px;
+
+        }
+        p,label{
+        color: rgb(161, 75, 6)
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>Welcome!</h3>
+        <p>Напишите ваш номер телефона и мы узнаем в какой стране вы живете!</p>
+    </div>
+    <div class="card">
+        <form method="post">
+            <br>
+            <br>
+            <label for="phone">Введите номер телефона: +</label>
+            <input type="text" name="phone" id="phone" required>
+            <br>
+            <button type="submit">Отправить</button>
+        </form>
+        {% if country %}
+            <p class="resultbox">Страна: <span>{{country}}</span></p>
+            <p class="resultbox">Номер телефона: <span>{{number}}</span></p>
+        {% endif %}
+    </div>
+</body>
+</html>
